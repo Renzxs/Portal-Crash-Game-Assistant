@@ -264,6 +264,8 @@ document.getElementById("restart").addEventListener("click", () => {
     x2MattackActive = false;
     attackInput.value = "";
 
+    progressBarManipulator();
+
     document.getElementById("x2Mattack").style.backgroundColor = "transparent";
     document.getElementById("x2Mattack").style.borderColor = "white";
 
