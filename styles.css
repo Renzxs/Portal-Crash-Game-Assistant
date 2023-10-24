@@ -1,0 +1,331 @@
+@font-face {
+    font-family: InterBlack;
+    src: url(font/Inter-Black.ttf);
+}
+
+@font-face {
+    font-family: InterBold;
+    src: url(font/Inter-Bold.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+}
+
+.container {
+    background-image: url(img/bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+}
+
+.lives {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: InterBold;
+    color: white;
+    height: 60%;
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+}
+
+.plives, .mlives {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    width: 10%;
+}
+
+.pHeader, .mHeader, .mFooter, .pFooter {
+    font-size: 20px;
+}
+
+.pHeader, .mHeader {
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+
+progress {
+    background-color: green;
+    border: 4px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 230px;
+    height: 50px;
+    position: relative;
+}
+
+.red::-webkit-progress-value { 
+    background: #701414; 
+}
+
+
+.green::-webkit-progress-value { 
+    background: green; 
+}
+
+
+.pBar-con, .mBar-con{
+    position: relative;
+    transform: rotate(90deg);
+}
+
+
+.pBar-con h2, .mBar-con h2 {
+    position: absolute;
+    left: 35%;
+    right: 50%;
+    top: 20%;
+    bottom: 40%;
+}
+  
+#attack-input {
+    border: 2px solid white;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-family: InterBold;
+    padding: 10px;
+    border-radius: 10px
+}
+
+#attack-btn {
+    border: none;
+    outline: none;
+    background-color: #701414;
+    color: white;
+    width: 100%;
+    font-family: InterBold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+}
+
+#x2Mattack {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    width: 40%;
+    font-family: InterBold;
+    border-radius: 10px;
+    padding: 10px;
+}   
+
+.inputAtk {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.spells {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+}
+
+.spells .spell {
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.spell > input[type="checkboxes"]{
+    outline: none;
+    border: none;
+}
+
+.spells .spell:focus, .spells .spell:active{
+    background-color: #00414A;
+    border-color: #168595;
+} 
+
+/* #damageReduction {
+    background-color: red;
+} */
+
+
+.mselect {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#monsters {
+    outline: none;
+    border: none;
+    font-family: InterBold;
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+}
+
+.monsterModal {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 10px;
+    color: white;
+    font-family: InterBold;
+    padding: 20px;
+    overflow-x: auto;
+    border-radius: 10px;
+    background-color: rgba(000, 000, 000, 0.8);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+}
+#back {
+    background-color: #701414;
+    width: 60px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.monster-grid {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.monster-con {
+    border: 2px solid white; 
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.monster-con:hover, .monster-con:focus {
+    background-color: #701414;
+}
+
+#restart {
+    margin: 20px 0 10px 0;
+}
+
+#introScreen {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0E0E0E;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 1s;
+    opacity: 1;
+}
+
+
+.invalid-msg {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    bottom: 20%;
+    left: 10%;
+    text-align: center;
+    background-color: rgba(000, 000, 000, 0.8);
+    color: white;
+    height:fit-content;
+    font-family: InterBold;
+    padding: 10px 15px 10px 15px;
+    font-size: 7px;
+    display: none;
+    border-radius: 10px;
+}
+
+#okay {
+    margin-top: 20px;
+    background-color: #701414;
+    color: white;
+    font-family: InterBold;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+#monsterImg {
+    display: none;
+}
+
+#playerImg {
+    transform: scaleX(-1);
+    display: none;
+}
+
+@media (min-width:800px ) {
+    .pBar-con, .mBar-con{
+        position: relative;
+        transform: rotate(0deg);
+    }
+    .pHeader, .mHeader{
+        display: none;
+    }
+    .spells {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #monsterImg {
+        display: block;
+    }
+
+    #playerImg {
+        transform: scaleX(-1);
+        display: block;
+    }
+}

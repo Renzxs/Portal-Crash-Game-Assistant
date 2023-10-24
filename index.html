@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Crash | Card Game Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/Game Logo.png">
+    <script src="App.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="lives">
+            <div class="plives">
+                <h1 class="pHeader">You</h1>
+                <div class="pBar-con">
+                   <progress id="pBar" class="pBar" max="100" value="100"></progress> 
+                   <h2 id="pLivesCount">100%</h2>
+                </div>
+                <img id="playerImg" src="img/Job Roles/Carpenter.png" alt="" width="250px">
+                <h1 class="pFooter">Player</h1>
+            </div>
+
+            <div id="restart">
+                <img src="img/restart.png" alt="" width="30px">
+            </div>
+
+            <div class="mlives">
+                <h1 class="mHeader">Monster</h1>
+                <div class="mBar-con">
+                    <progress id="mBar" class="mBar" max="" value="0"></progress>
+                    <h2 id="mLivesCount">0%</h2>
+                </div>
+                <img id="monsterImg" src="" alt="" width="300px">
+                <h1 class="mFooter">Monster</h1>
+            </div>
+        </div>
+
+        <div class="input">
+            <div class="inputAtk">
+                <input id="attack-input" type="text" placeholder="Add Attack Damage (+)">
+                <div class="btns">
+                    <input id="attack-btn"  type="button" value="Attack">
+                    <input type="button" id="x2Mattack" value="x2">
+                </div>
+                
+            </div>
+
+            <div class="spells">
+                <div class="spell"  id="damage-reduction">
+                    <!-- <input type="checkbox" name="spell"  id="damage-reduction"> -->
+                    <img src="img/Spells/Damage Reduction.png" alt="" width="25px" height="25px">
+                </div>
+                <div class="spell" id="barrier">
+                    <!-- <input type="checkbox" name="spell" id="barrier"> -->
+                    <img src="img/Spells/Barrier.png" alt="" width="25px" height="25px">
+              </div>
+
+                <div class="spell" id="health-reduction">
+                    <!-- <input type="checkbox" name="spell" id="health-reduction"> -->
+                    <img src="img/Spells/Health Reduction.png" alt="" width="25px" height="25px">
+                </div>
+
+                <div class="spell" id="heal">
+                    <!-- <input type="checkbox" name="spell" id="heal"> -->
+                    <img src="img/Spells/Heal Clear.png" alt="" width="25px" height="25px">
+                </div>
+
+                <div class="spell" id="silence">
+                    <!-- <input type="checkbox" name="spell" id="silence"> -->
+                    <img src="img/Spells/Silence.png" alt="" width="25px" height="25px">
+                </div>
+                
+            </div>
+
+            <div class="mselect">
+                <input id="monsters" type="button" value="Select a Monster">
+            </div>
+
+            <div class="monsterModal">
+                <div id="back">Back</div>
+                <div class="header">
+                    <h3>Select a Monster:</h3>
+                </div>
+
+                <div class="monster-grid">
+                    <!--MONSTER LIST-->
+                </div>
+            </div>
+
+            <div id="introScreen" class="fade-out">
+                <img src="img/intro_logo.png" alt="" width="250px">
+                <img src="img/trademark.png" alt="" width="200px">
+            </div>
+
+            <div class="invalid-msg">
+                <h1>Invalid attack value. Please enter a valid non-negative number.</h1>
+                <button id="okay">Okay</button>
+            </div>
+        </div>
+
+        <audio id="kimino" src="img/Kagamine Rin  Girl A  A  But its the Best part Loop.mp3"></audio>
+    </div>
+</body>
+</html>
