@@ -1,6 +1,9 @@
-Portal Crash: Card Game Assistant
+# Portal Crash: Card Game Assistant
+![GAME LOGO](https://github.com/Renzxs/Portal-Crash-Game-Assistant/assets/90491632/f4183de5-b76e-4eba-baee-e0ed221352a1)
+- This web and mobile app is an card game assistant for the game called Portal Crash: Warriors of the sea.
 
-- This web and mobile app is an card game assistant for the game called Portal Crash: Warriors of the sea
+------------------------------------------------------------------------
+# UPDATES/VERSIONS: 
 
 Version 1.0: (BETA VERSION)
 - SPELLS: Heal
@@ -23,5 +26,8 @@ Version 1.3 (BETA VERSION)
 # Version 1.4 (CURRENT VERSION)
 - Kagamine Rin Audio Integration
 - Progress UI enhancement
+
+
+
 
 
