@@ -38,7 +38,7 @@ Version 1.3 (BETA VERSION)
 1. Game Masters should be the one who will going to use this app.
 2. There 17 different monsters in the game, you only need to select 1 monster in the start of the game. The monster that will be selected in the app should depend on what monster appeared on the card game.
 3. Once you already selected a monster, you can already use the game panel to calculate ingame. The calculation of the attack card of players should based in the attack card, dice and spells.
-SAMPLE INPUT:
+- SAMPLE INPUT:
    - 10 + 3 (Without Multiplier)
    - (10 + 3) * 2 (With Multiplier)
 4. The output of the calculation will automatically reduce monster health. Once you press the Attack button.
