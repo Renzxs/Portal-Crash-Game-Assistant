@@ -1,4 +1,6 @@
-👋 Hello, We are the SuperTeam Studios!
+👋 Hello, We are the SuperTeam Studios!, and this is the first game we developed for our midterms project for Game Development course.
+
+-REMAINDER!: THIS WEB-APP IS NOT A GAME, IT IS ONLY A CARD GAME ASSISTANT FOR THE CARD GAME WE DEVELOP CALLED PORTAL CRASH: WARRIORS OF THE SEA-
 
 # Portal Crash: Card Game Assistant
 ![GAME LOGO](https://github.com/Renzxs/Portal-Crash-Game-Assistant/assets/90491632/f4183de5-b76e-4eba-baee-e0ed221352a1)
