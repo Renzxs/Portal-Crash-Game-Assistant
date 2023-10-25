@@ -334,3 +334,19 @@ progress {
         display: block;
     }
 }
+
+@media (max-height: 500px){
+    .pHeader, .mHeader, .mFooter, .pFooter {
+        font-size: 15px;
+    }
+
+    progress {
+        background-color: green;
+        border: 4px solid white;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 180px;
+        height: 50px;
+        position: relative;
+    }
+}
