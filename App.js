@@ -95,11 +95,11 @@ const monster = {
 const playerProg = document.getElementById("pBar");
 const playerLivesCount = document.getElementById("pLivesCount");
 
+
 const monsterProg = document.getElementById("mBar");
 const monsterLivesCount = document.getElementById("mLivesCount");
 
 const attackInput = document.getElementById("attack-input");
-
 
 const monstersGrid = document.querySelector(".monster-grid");
 
@@ -112,6 +112,7 @@ let silenceIndicator = false;
 let damageReductionIndicator = false;
 let x2MattackActive = false;
 
+// DISPLAYS ALL MONSTERS IN MONSTER MODAL
 for (const monsterKey in monster) {
     if (monster.hasOwnProperty(monsterKey)) {
         const monsterData = monster[monsterKey];
@@ -142,6 +143,8 @@ for (const monsterKey in monster) {
             const monsterImg = document.getElementById("monsterImg");
             monsterImg.src = monsterData.img;
 
+            progressBarManipulator();
+
             setTimeout(function() {
                 const monsterModal = document.querySelector(".monsterModal");
                 monsterModal.style.display = "none";
@@ -151,17 +154,19 @@ for (const monsterKey in monster) {
     }
 }
 
+// SHOW MONSTER MODAL
 document.getElementById("monsters").addEventListener("click", () => {
     const monsterModal = document.querySelector(".monsterModal");
     monsterModal.style.display = "block";
 });
 
+// EXIT MONSTER MODAL
 document.getElementById("back").addEventListener("click", () => {
     const monsterModal = document.querySelector(".monsterModal");
     monsterModal.style.display = "none";
 });
 
-
+// SPELLS ON DOCUMENTS
 const damageReduction = document.getElementById("damage-reduction");
 const barrier = document.getElementById("barrier");
 const healthReduction = document.getElementById("health-reduction");
@@ -169,14 +174,14 @@ const heal = document.getElementById("heal");
 const silence = document.getElementById("silence");
 const times2MonsterDmg = document.getElementById("x2Mattack");
 
-
+// ATTACK BUTTON
 document.getElementById("attack-btn").addEventListener("click", () => {
        // Get the attack input value and evaluate it as a number
        const attackValue = eval(attackInput.value);
 
        // Damage Reduction
        if(damageReductionIndicator === true) {
-            monsterAttack = Math.ceil(monsterAttack / 2);
+            monsterAttack = Math.round(monsterAttack / 2);
             playerAttack();
             monsterAttack = monsterReduced;
             damageReductionIndicator = false;
@@ -251,6 +256,7 @@ document.getElementById("attack-btn").addEventListener("click", () => {
        progressBarManipulator();
 });
 
+// RESTART/RESET BUTTON
 document.getElementById("restart").addEventListener("click", () => {
     monsterLives  = 0;
     monsterAttack = 0;
@@ -263,7 +269,7 @@ document.getElementById("restart").addEventListener("click", () => {
     silenceIndicator = false;
     x2MattackActive = false;
     attackInput.value = "";
-
+    document.getElementById("monsterImg").src = "";
     progressBarManipulator();
 
     document.getElementById("x2Mattack").style.backgroundColor = "transparent";
@@ -280,6 +286,7 @@ document.getElementById("restart").addEventListener("click", () => {
     document.getElementById("health-reduction").style.display = "block";
 });
 
+// HEAL BUTTON 
 document.getElementById("heal").addEventListener("click", () => {
     playerProg.value = playerProg.value + 20;
     playerLivesCount.textContent = playerProg.value  + "%";
@@ -288,6 +295,7 @@ document.getElementById("heal").addEventListener("click", () => {
     progressBarManipulator();
 });
 
+// DAMAGE REDUCTION BUTTON
 damageReduction.addEventListener("click", () => {
     damageReductionIndicator = !damageReductionIndicator;
 
@@ -311,6 +319,7 @@ damageReduction.addEventListener("click", () => {
 
 });
 
+// BARRIER BUTTON
 barrier.addEventListener("click", () => {
     barrierIndicator = !barrierIndicator;
 
@@ -334,9 +343,9 @@ barrier.addEventListener("click", () => {
 
 });
 
+// SILENCE BUTTON
 silence.addEventListener("click", () => {
     silenceIndicator = !silenceIndicator;
-
 
     if(silenceIndicator) {
         damageReductionIndicator = false;
@@ -354,14 +363,9 @@ silence.addEventListener("click", () => {
         silence.style.backgroundColor = "transparent";
         silence.style.borderColor = "white";
     }
-
-
-
-
-
 });
 
-
+// HEALTH REDUCTION BUTTON
 document.getElementById("health-reduction").addEventListener("click", function() {
     monsterLives = Math.round(monsterLives / 2);
     
@@ -372,7 +376,7 @@ document.getElementById("health-reduction").addEventListener("click", function()
 
 });     
 
-
+// TIMES 2 MONSTER ATTACK DAMAGE
 document.getElementById("x2Mattack").addEventListener("click", () => {
     x2MattackActive = !x2MattackActive; // Toggle the variable
     if (x2MattackActive) {
@@ -384,6 +388,7 @@ document.getElementById("x2Mattack").addEventListener("click", () => {
     }
 });
 
+// PLAYER ATTACK CALCULATION
 function playerAttack() {
     // Get the attack input value and evaluate it as a number
     const attackValue = eval(attackInput.value);
@@ -427,12 +432,13 @@ function playerAttack() {
     }
 }
 
+// OKAY BUTTON FOR INVALID MESSAGE
 document.getElementById("okay").addEventListener("click", function() {
     const invalid = document.querySelector(".invalid-msg");
     invalid.style.display = "none";
 });
 
-
+// INTRO SCREEN
 document.addEventListener("DOMContentLoaded", function() {
     const intro = document.getElementById("introScreen");
     
@@ -444,11 +450,11 @@ document.addEventListener("DOMContentLoaded", function() {
     },5000);
 });
 
+// CHANGE JOB ROLE DISPLAY (FOR DESKTOP ONLY)
 let counter = 0;
 document.getElementById("playerImg").addEventListener("click", function() {
     const pImg = ["img/Job Roles/Doctor.png", "img/Job Roles/Soldier.png", "img/Job Roles/Carpenter.png"];
     
-
     if(counter <= 2){
         document.getElementById("playerImg").src = pImg[counter];
         counter++;
@@ -459,7 +465,7 @@ document.getElementById("playerImg").addEventListener("click", function() {
     console.log(counter);
 });
 
-
+// PROGRESSBAR MANIPULATOR
 function progressBarManipulator() {
     if(monsterProg.value <= 30){
         monsterProg.classList.remove("green");
