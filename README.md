@@ -1,4 +1,4 @@
-👋 Hello, We are the SuperTeam Studios!, and this is the first game we developed for our midterms project for Game Development course.
+👋 Hello, We are the SuperTeam Studios!
 
 REMAINDER!: THIS WEB-APP IS NOT A GAME, IT IS ONLY A CARD GAME ASSISTANT FOR THE CARD GAME WE DEVELOP CALLED PORTAL CRASH: WARRIORS OF THE SEA
 
