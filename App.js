@@ -1,3 +1,5 @@
+let firstAttackInput = 0;
+
 const monster = {
     monster1: {
         name: "Bloater-Fat-Zombie",
@@ -89,8 +91,27 @@ const monster = {
         lives: 300,
         dmg: 12
     },
+    monster16: {
+        name: "Anomalies",
+        img: "img/Monsters/Anomalies.png",
+        lives: 200,
+        dmg: firstAttackInput
+    },
+    monster17: {
+        name: "Anomalies",
+        img: "img/Monsters/Anomalies(2).png",
+        lives: 200,
+        dmg: firstAttackInput
+    },
+    monster18: {
+        name: "Anomalies",
+        img: "img/Monsters/Anomalies(3).png",
+        lives: 250,
+        dmg: firstAttackInput
+    },
 }
 
+let isAnomaliesActive = false;
 
 const playerProg = document.getElementById("pBar");
 const playerLivesCount = document.getElementById("pLivesCount");
@@ -136,9 +157,19 @@ for (const monsterKey in monster) {
             monsterProg.value = monsterData.lives;
             monsterLivesCount.innerText = monsterData.lives + "%";
 
-            monsterLives = monsterData.lives;
-            monsterAttack = monsterData.dmg;
-            monsterReduced = monsterData.dmg;
+            if(monsterData.name === "Anomalies"){
+                monsterLives = monsterData.lives;
+                monsterAttack = firstAttackInput;
+                monsterReduced = firstAttackInput;
+                isAnomaliesActive = true;
+                console.log("Anomalies");
+            } else {
+                isAnomaliesActive = false;
+                monsterLives = monsterData.lives;
+                monsterAttack = monsterData.dmg;
+                monsterReduced = monsterData.dmg;
+                console.log("Non-Anomalies");
+            }
 
             const monsterImg = document.getElementById("monsterImg");
             monsterImg.src = monsterData.img;
@@ -174,10 +205,19 @@ const heal = document.getElementById("heal");
 const silence = document.getElementById("silence");
 const times2MonsterDmg = document.getElementById("x2Mattack");
 
+let countTurn = 0;
 // ATTACK BUTTON
 document.getElementById("attack-btn").addEventListener("click", () => {
-       // Get the attack input value and evaluate it as a number
-       const attackValue = eval(attackInput.value);
+        const attackValue = eval(attackInput.value); // Get the attack input value and evaluate it as a number
+
+        firstAttackInput = attackValue;
+       if(isAnomaliesActive){
+            if(countTurn === 0){
+                monsterAttack = firstAttackInput
+                monsterReduced = firstAttackInput
+                countTurn++;
+            }
+       }
 
        // Damage Reduction
        if(damageReductionIndicator === true) {
@@ -270,6 +310,9 @@ document.getElementById("restart").addEventListener("click", () => {
     x2MattackActive = false;
     attackInput.value = "";
     document.getElementById("monsterImg").src = "";
+    isAnomaliesActive = false;
+    firstAttackInput = 0;
+    countTurn = 0;
     progressBarManipulator();
 
     document.getElementById("x2Mattack").style.backgroundColor = "transparent";
