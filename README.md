@@ -1,3 +1,5 @@
+👋 Hello, We are the SuperTeam Studios!
+
 # Portal Crash: Card Game Assistant
 ![GAME LOGO](https://github.com/Renzxs/Portal-Crash-Game-Assistant/assets/90491632/f4183de5-b76e-4eba-baee-e0ed221352a1)
 - This web and mobile app is an card game assistant for the game called Portal Crash: Warriors of the sea.
@@ -30,6 +32,10 @@ Version 1.3 (BETA VERSION)
 - - - -
 🎓 Academic Honesty
 DO NOT COPY FOR AN ASSIGNMENT - Avoid plagiarism and adhere to the spirit of this Academic Honesty Policy.
+
+- - - - 
+&copy; No Copyright Infrigement
+
 
 
 
