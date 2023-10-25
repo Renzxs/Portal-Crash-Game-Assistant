@@ -27,6 +27,8 @@ body {
     height: 100vh;
 }
 
+
+/* PROGRESS BAR (MONSTER AND PLAYER LIVES) */
 .lives {
     display: flex;
     justify-content: space-around;
@@ -91,7 +93,22 @@ progress {
     top: 20%;
     bottom: 40%;
 }
-  
+
+#restart {
+    margin: 20px 0 10px 0;
+}
+
+#monsterImg {
+    display: none;
+}
+
+#playerImg {
+    transform: scaleX(-1);
+    display: none;
+}
+
+
+/* PLAYER ATTACK CALCULATOR */
 #attack-input {
     border: 2px solid white;
     outline: none;
@@ -142,7 +159,7 @@ progress {
     align-items: center;
 }
 
-
+/* SPELLS */
 .spells {
     margin-top: 10px;
     display: flex;
@@ -171,11 +188,7 @@ progress {
     border-color: #168595;
 } 
 
-/* #damageReduction {
-    background-color: red;
-} */
-
-
+/* MONSTER SELECTION BUTTON */
 .mselect {
     padding: 10px;
     display: flex;
@@ -193,6 +206,8 @@ progress {
     color: white;
 }
 
+
+/* MONSTERS MODAL */
 .monsterModal {
     position: absolute;
     z-index: 1;
@@ -247,12 +262,10 @@ progress {
 
 .monster-con:hover, .monster-con:focus {
     background-color: #701414;
+    border-color: #b82222;
 }
 
-#restart {
-    margin: 20px 0 10px 0;
-}
-
+/* INTRO SCREEN */
 #introScreen {
     position: absolute;
     z-index: 5;
@@ -269,7 +282,7 @@ progress {
     opacity: 1;
 }
 
-
+/* INVALID INPUT MESSAGE */
 .invalid-msg {
     position: absolute;
     top: 40%;
@@ -298,15 +311,7 @@ progress {
     border: none;
 }
 
-#monsterImg {
-    display: none;
-}
-
-#playerImg {
-    transform: scaleX(-1);
-    display: none;
-}
-
+/* FOR DESKTOP (BIG SCREEN) */
 @media (min-width:800px ) {
     .pBar-con, .mBar-con{
         position: relative;
