@@ -65,7 +65,7 @@ const monster = {
         name: "Skelly Weird Zombie",
         img: "img/Monsters/Skelly-Weird-Zombie.png",
         lives: 150,
-        dmg: 8
+        dmg: 5
     },
     monster12: {
         name: "Ultraviolet Slime",
@@ -76,7 +76,7 @@ const monster = {
     monster13: {
         name: "The Great Kraken",
         img: "img/Monsters/The-Great-Kraken.png",
-        lives: 600,
+        lives: 500,
         dmg: 15
     },
     monster14: {
